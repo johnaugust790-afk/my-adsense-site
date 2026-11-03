@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPulse — Insights & Guides</title>
+    <meta name="description" content="Explore insightful tutorials, practical guides, and tech perspectives.">
+
+    <!-- GOOGLE ADSENSE CODE SLOT (Paste your snippet here when applying) -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.18);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+            --text-color: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.85);
+            --accent-color: #007aff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e1b4b, #311042);
+            background-attachment: fixed;
+            color: var(--text-color);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Glassmorphism Card Container */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: var(--glass-shadow);
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 24px;
+            padding: 28px;
+        }
+
+        /* Header Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #fff;
+        }
+
+        nav {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 14px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+        }
+
+        nav button:hover, nav button.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.4);
+        }
+
+        /* Tab Content Control */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+
+        p {
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        /* Article Cards */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .article-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        .article-meta {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: auto;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .glass-card { padding: 18px; border-radius: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation Bar -->
+    <div class="glass-card">
+        <header>
+            <div class="logo">TechPulse</div>
+            <nav>
+                <button class="active" onclick="showTab('home', this)">Home</button>
+                <button onclick="showTab('articles', this)">Articles</button>
+                <button onclick="showTab('about', this)">About</button>
+                <button onclick="showTab('privacy', this)">Privacy Policy</button>
+                <button onclick="showTab('contact', this)">Contact</button>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Main Content Body -->
+    <div class="glass-card">
+        
+        <!-- HOME TAB -->
+        <div id="home" class="tab-content active">
+            <h1>Welcome to TechPulse</h1>
+            <p>Your portal for clear tutorials, practical developer insights, and technology breakdowns. Built to deliver accessible, distraction-free knowledge directly to your browser.</p>
+            
+            <h2>Latest Insights</h2>
+            <div class="article-grid">
+                <div class="article-box">
+                    <div class="article-meta">Published on Nov 2026 • By Augusti</div>
+                    <h3>Understanding Modern Web Performance</h3>
+                    <p>Optimizing web application speed involves efficient resource loading, responsive UI styling, and clean semantic structure...</p>
+                </div>
+                <div class="article-box">
+                    <div class="article-meta">Published on Nov 2026 • By Augusti</div>
+                    <h3>Exploring Glassmorphism in Modern Interfaces</h3>
+                    <p>Frosted glass visual effects combine translucent backdrop blurring with soft borders to create depth and focus in digital design...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ARTICLES TAB -->
+        <div id="articles" class="tab-content">
+            <h1>Featured Content & Articles</h1>
+            <article style="margin-bottom: 24px;">
+                <h2>Deep Dive into Modern Front-End Architecture</h2>
+                <div class="article-meta">Written by Augusti Johnson • Verified Guide</div>
+                <p>Building high-performing web pages requires a clear balance between minimal code overhead and engaging visual aesthetics. Lightweight CSS frameworks paired with vanilla JavaScript allow applications to remain responsive without heavy rendering bottlenecks.</p>
+                <p>Key strategies for optimization include managing dynamic asset loading, minimizing external script reliance, and using native styling features like CSS custom properties and hardware-accelerated blur filters.</p>
+            </article>
+
+            <article>
+                <h2>Navigating Digital Ad Compliance & Policy Guidelines</h2>
+                <div class="article-meta">Written by Augusti Johnson • Strategy</div>
+                <p>Ad networks require strict adherence to publisher guidelines to maintain ecosystem quality. Key elements for compliance include original written content, transparent operational pages, clear visual hierarchy, and an optimized mobile layout free of pop-up disruptions.</p>
+            </article>
+        </div>
+
+        <!-- ABOUT TAB -->
+        <div id="about" class="tab-content">
+            <h1>About TechPulse</h1>
+            <p>TechPulse is an independent digital publication founded to break down technical topics into actionable, high-value guides.</p>
+            <p>Our commitment is focused on publishing original, research-backed content covering web development, interface design standards, and modern technology trends. We do not rely on automated content syndication or republished material.</p>
+        </div>
+
+        <!-- PRIVACY POLICY TAB -->
+        <div id="privacy" class="tab-content">
+            <h1>Privacy Policy</h1>
+            <p><strong>Last Updated:</strong> November 2026</p>
+            <p>At TechPulse, accessible from our live domain, one of our main priorities is the privacy of our visitors. This Privacy Policy document outlines the types of information collected and recorded by TechPulse and how we use it.</p>
+            
+            <h3>Log Files & Third-Party Analytics</h3>
+            <p>TechPulse follows a standard procedure of using log files. These files log visitors when they visit websites. Third-party ad servers or ad networks use technologies like cookies, JavaScript, or Web Beacons in their respective advertisements and links that appear on TechPulse.</p>
+
+            <h3>Google DoubleClick DART Cookie</h3>
+            <p>Google is one of our third-party vendors. It uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet. You may choose to decline the use of DART cookies by visiting the Google Ad and Content Network Privacy Policy.</p>
+
+            <h3>Contact & Rights</h3>
+            <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to reach out via our contact page.</p>
+        </div>
+
+        <!-- CONTACT TAB -->
+        <div id="contact" class="tab-content">
+            <h1>Contact Us</h1>
+            <p>Have inquiries, feedback, or editorial questions? Reach out to our team using the form below or via direct email.</p>
+            <form onsubmit="event.preventDefault(); alert('Message sent!');" style="display: flex; flex-direction: column; gap: 12px; margin-top: 15px;">
+                <input type="text" placeholder="Your Name" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.1); color: #fff;">
+                <input type="email" placeholder="Your Email" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.1); color: #fff;">
+                <textarea rows="4" placeholder="Your Message" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.1); color: #fff;"></textarea>
+                <button type="submit" style="padding: 12px; border-radius: 10px; border: none; background: var(--accent-color); color: #fff; font-weight: bold; cursor: pointer;">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 TechPulse. All rights reserved. Built with modern glassmorphism.
+    </footer>
+
+    <script>
+        function showTab(tabId, btn) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Deactivate all nav buttons
+            const buttons = document.querySelectorAll('nav button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Activate target tab and button
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+    </script>
+</body>
+</html>
